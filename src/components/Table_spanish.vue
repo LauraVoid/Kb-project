@@ -20,15 +20,25 @@
           color="blue darken-3"
           class="mb-1"
         >
-          <v-text-field
+          <v-card-text>
+           <v-autocomplete
             v-model="search"
+            :items="list"                                   
+            color="white"    
             clearable
             flat
-            solo-inverted
-            hide-details
-            prepend-inner-icon="mdi-magnify"
-            label="Search"
-          ></v-text-field>
+            item-value="Name"            
+            placeholder="Buscar"
+            prepend-inner-icon="mdi-magnify"       
+           
+          ></v-autocomplete>
+          </v-card-text>
+
+          <v-expand-transition>      
+    </v-expand-transition>
+
+
+
           <template v-if="$vuetify.breakpoint.mdAndUp">
             <v-spacer></v-spacer>
             <v-select
@@ -72,9 +82,9 @@
             v-for="item in props.items"
             :key="item.name"
             cols="12"
-            sm="6"
-            md="4"
-            lg="3"
+            sm="12"
+            md="12"
+            lg="6"
           >
                <v-card>
               <v-card-title class="subheading font-weight-bold">
@@ -177,14 +187,18 @@
 </template>
 
 <script>
-import items from './../../data/observations'
+import items from './../../data/observations_esp'
+import names from '../../data/names_esp'
 
   export default {
       
     data () {
       return {
-        itemsPerPageArray: [4, 8, 12],
+        itemsPerPageArray: [8,12,20,30],
         search: '',
+        value: null,
+        isLoading: false,
+        descriptionLimit: 60,
         filter: {},
         sortDesc: false,
         page: 1,
@@ -197,6 +211,7 @@ import items from './../../data/observations'
           'Type',
           'Severity',         
         ],
+        list: names,
         items:items
       }
     },
@@ -207,6 +222,7 @@ import items from './../../data/observations'
       filteredKeys () {
         return this.keys.filter(key => key !== 'Name')
       },
+            
     },
     methods: {
       nextPage () {

@@ -1,10 +1,16 @@
 <template>
   <v-container fluid>
     <v-card height="70" flat></v-card>
-    <v-row justify="center" class="mx-0">
+    <v-row justify="center">
+      <v-col            
+            cols="12"
+            sm="12"
+            md="12"
+            lg="12"
+          >
       <v-card flat>
-        <v-card-title>
-          <span class="text-h2">{{ issue_data.name }}</span>
+        <v-card-title >
+          <span class="text-h2" >{{ issue_data.name }}</span>
         </v-card-title>
         <v-divider class="mx-4"></v-divider>
 
@@ -31,7 +37,7 @@
         <v-card-title>
         <v-tabs-items v-model="tab">
           <v-tab-item>
-            <v-card flat min-width=500>
+            <v-card flat >
               <v-alert
                 :value="dialog"
                 width="150"
@@ -53,7 +59,7 @@
           </v-tab-item>
           <v-tab-item>
               <!-- IMPACTO -->
-            <v-card flat min-width=500>
+            <v-card flat >
               <v-alert
                 :value="dialog"
                 width="150"
@@ -76,7 +82,7 @@
 
           <v-tab-item>
               <!-- RECOMENDACIÓN -->
-            <v-card flat min-width=500>
+            <v-card flat >
               <v-alert
                 :value="dialog"
                 width="150"
@@ -115,7 +121,7 @@
           <input type="hidden" id="impact" :value="issue_data.impact" />
           <input type="hidden" id="recomend" :value="issue_data.recommendation" />
     </div>
-
+    </v-col>
     </v-row>
   </v-container>
 </template>

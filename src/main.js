@@ -12,7 +12,7 @@ const routes =[
    component: Table_spanish,
   },
   {
-    path: '/issue/:name',
+    path: '/issue',
     name: 'issue_item',    
    component: Issue,
    props: (route) => ({    
