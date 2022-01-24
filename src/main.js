@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import Table_english from './components/Table_english'
 import Table_spanish from './components/Table_spanish'
 import Issue from './components/Issue'
+import Phishing from './components/Phishing'
 
 const routes =[
   {
@@ -22,6 +23,10 @@ const routes =[
   {
     path: '/english',
    component: Table_english,
+  },
+  {
+    path: '/phishing',
+   component: Phishing,
   },
 
 ]

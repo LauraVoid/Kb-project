@@ -23,6 +23,12 @@
           text
         >Español</v-tab >
 
+        <v-tab                             
+          to="/phishing"
+          width="100"
+          text
+        >Phishing</v-tab >
+
       </div>
 
       <v-spacer></v-spacer>      
