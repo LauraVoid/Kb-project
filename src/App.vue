@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    
     <div class="app-container">
     <header class="app-header">
     <v-app-bar
@@ -11,6 +12,13 @@
     >
       <div class="d-flex align-center">
         
+        <v-tab                               
+          to="/"
+          width="100"
+          text
+        >
+        <v-icon>mdi-home</v-icon></v-tab >
+
         <v-tab                               
           to="/english"
           width="100"
@@ -37,8 +45,7 @@
     </div>
     <div class="content">
           <router-view></router-view>
-    </div> 
-    
+    </div>
     
     
 

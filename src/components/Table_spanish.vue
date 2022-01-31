@@ -205,7 +205,6 @@ import names from '../../data/names_esp'
         itemsPerPage: 12,
         sortBy: 'name',
         visible: false,
-        el: "#app",
         keys: [
           'Name',
           'Type',

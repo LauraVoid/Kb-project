@@ -6,6 +6,7 @@ import Table_english from './components/Table_english'
 import Table_spanish from './components/Table_spanish'
 import Issue from './components/Issue'
 import Phishing from './components/Phishing'
+import HelloWorld from './components/HelloWorld'
 
 const routes =[
   {
@@ -27,6 +28,10 @@ const routes =[
   {
     path: '/phishing',
    component: Phishing,
+  },
+  {
+    path: '/',
+   component: HelloWorld,
   },
 
 ]
