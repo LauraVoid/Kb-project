@@ -7,6 +7,8 @@ import Table_spanish from './components/Table_spanish'
 import Issue from './components/Issue'
 import Phishing from './components/Phishing'
 import HelloWorld from './components/HelloWorld'
+import NotFound from './components/404'
+import Login from './components/Login'
 
 const routes =[
   {
@@ -33,6 +35,19 @@ const routes =[
     path: '/',
    component: HelloWorld,
   },
+  {
+    path: '*',
+   component: NotFound,
+  },
+  {
+    path: '/login',
+   component: Login,
+  },
+  {
+    path: '/admin',
+   component: Login,
+  },
+
 
 ]
 
