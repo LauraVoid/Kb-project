@@ -9,11 +9,11 @@
           <v-card-subtitle> Toolkit </v-card-subtitle>
 
           <v-card-actions>
-            <v-btn color="orange lighten-2" text> Explore </v-btn>
+           
 
             <v-spacer></v-spacer>
 
-            <v-btn icon @click="showGo = !showGo">
+            <v-btn block rounded tile  icon @click="showGo = !showGo">
               <v-icon>{{
                 showGo ? "mdi-chevron-up" : "mdi-chevron-down"
               }}</v-icon>
@@ -56,6 +56,10 @@
                     >Tracker: </a
                   >mailjet
                 </div>
+                <br>
+                <div>
+                  <b>Archivos para landing page:</b> Se deben guardar dentro de gophish/static/enpoint. Luego para acceder a ellos se modifica en el html las rutas por http://domain/static/[FILE]
+                </div>
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -68,12 +72,11 @@
 
           <v-card-subtitle> Certificado para landing page </v-card-subtitle>
 
-          <v-card-actions>
-            <v-btn color="orange lighten-2" text> Explore </v-btn>
+          <v-card-actions>            
 
             <v-spacer></v-spacer>
 
-            <v-btn icon @click="showCert = !showCert">
+            <v-btn block rounded tile   icon @click="showCert = !showCert">
               <v-icon>{{
                 showCert ? "mdi-chevron-up" : "mdi-chevron-down"
               }}</v-icon>
@@ -92,11 +95,19 @@
                     >Certbot instructions</a
                   >
                 </div>
-                <div>Generar certificado:</div>
+                <div><b>Generar certificado:</b></div>
                 <div>
                   certbot certonly --manual --preferred-challenges=dns --email (
                   EMAIL) --server https://acme-v02.api.letsencrypt.org/directory
                   --agree-tos -d *.(DOMAIN)
+                </div>
+                <br>
+                <div><b>Resultados certificados:</b></div>
+                <div>
+                  certificado.full = certificado.cert
+                </div>
+                <div>
+                  certificado.key = certificado.key
                 </div>
               </v-card-text>
             </div>
@@ -113,11 +124,11 @@
           <v-card-subtitle> Herramientas </v-card-subtitle>
 
           <v-card-actions>
-            <v-btn color="orange lighten-2" text> Explore </v-btn>
+            
 
             <v-spacer></v-spacer>
 
-            <v-btn icon @click="showTools = !showTools">
+            <v-btn block rounded tile icon @click="showTools = !showTools">
               <v-icon>{{
                 showTools ? "mdi-chevron-up" : "mdi-chevron-down"
               }}</v-icon>
@@ -163,11 +174,11 @@
           </v-card-subtitle>
 
           <v-card-actions>
-            <v-btn color="orange lighten-2" text> Explore </v-btn>
+            
 
             <v-spacer></v-spacer>
 
-            <v-btn icon @click="showCode = !showCode">
+            <v-btn block rounded tile  icon @click="showCode = !showCode">
               <v-icon>{{
                 showCode ? "mdi-chevron-up" : "mdi-chevron-down"
               }}</v-icon>
@@ -188,6 +199,7 @@
                     >
                   </div>
                   <div><span>&lt;img src="[BASE64]" /&gt;</span></div>
+                  <div><span>&lt;/a&gt;</span></div>
                   <div><span>&lt;br&gt;</span></div>
                   <div><span>&lt;br&gt;</span></div>
                   <div><span>&lt;br&gt;</span></div>
@@ -218,11 +230,11 @@
           <v-card-subtitle> Phishing con archivo adjunto </v-card-subtitle>
 
           <v-card-actions>
-            <v-btn color="orange lighten-2" text> Explore </v-btn>
+           
 
-            <v-spacer></v-spacer>
+           
 
-            <v-btn icon @click="showAdj = !showAdj">
+            <v-btn block rounded tile  icon @click="showAdj = !showAdj">
               <v-icon>{{
                 showAdj ? "mdi-chevron-up" : "mdi-chevron-down"
               }}</v-icon>
