@@ -38,6 +38,29 @@
         >Phishing</v-tab >
 
       </div>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <div>
+        <v-tab                               
+          to="/login"
+          width="100"
+          text
+        >
+        <v-icon>mdi-account</v-icon></v-tab >
+
+      </div>
 
       <v-spacer></v-spacer>      
     </v-app-bar>

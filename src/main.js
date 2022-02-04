@@ -9,6 +9,7 @@ import Phishing from './components/Phishing'
 import HelloWorld from './components/HelloWorld'
 import NotFound from './components/404'
 import Login from './components/Login'
+import LoginIn from './components/LoginIn'
 
 const routes =[
   {
@@ -38,14 +39,14 @@ const routes =[
   {
     path: '*',
    component: NotFound,
-  },
-  {
-    path: '/login',
-   component: Login,
-  },
+  },  
   {
     path: '/admin',
    component: Login,
+  },
+  {
+    path: '/login',
+   component: LoginIn,
   },
 
 
