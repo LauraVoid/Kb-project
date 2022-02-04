@@ -60,6 +60,14 @@
                 <div>
                   <b>Archivos para landing page:</b> Se deben guardar dentro de gophish/static/enpoint. Luego para acceder a ellos se modifica en el html las rutas por http://domain/static/[FILE]
                 </div>
+                <br>
+                <div>
+                  <b>Capturar credenciales:</b> Debe existir un unico Form dentro del html, el cual debe tener 2 propiedades
+                  <div>1. action=" "</div>
+                  <div>2. method="POST"</div>
+                  <div>Asegurarse de que no exista un parametro de onsubmit en el form y cada input debe tener el atributo name</div>
+                  
+                </div>
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -95,16 +103,32 @@
                     >Certbot instructions</a
                   >
                 </div>
+                
                 <div><b>Generar certificado:</b></div>
+                <div>
+                  certbot certonly --standalone
+                </div>
+                <br>
+                <div><b>Generar certificado para subdominio:</b></div>
                 <div>
                   certbot certonly --manual --preferred-challenges=dns --email (
                   EMAIL) --server https://acme-v02.api.letsencrypt.org/directory
                   --agree-tos -d *.(DOMAIN)
                 </div>
                 <br>
+                <div>
+                  Certbot dara como respuesta la ruta de los certificados
+                </div>
+                <v-img height="100" src="../assets/certbot.png"></v-img>
+                <br>
+                <div>
+                  En <b>config.json</b> se deben modificar los siguientes parametros:
+                </div>
+                <v-img height="100" src="../assets/config.png"></v-img>
+
                 <div><b>Resultados certificados:</b></div>
                 <div>
-                  certificado.full = certificado.cert
+                  certificado.full = certificado.crt
                 </div>
                 <div>
                   certificado.key = certificado.key
