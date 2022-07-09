@@ -3,18 +3,19 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import VueRouter from 'vue-router'
 import Table_english from './components/Table_english'
-import Table_spanish from './components/Table_spanish'
+// import Table_spanish from './components/Table_spanish'
 import Issue from './components/Issue'
 import Phishing from './components/Phishing'
 import HelloWorld from './components/HelloWorld'
 import NotFound from './components/404'
 import Login from './components/Login'
 import LoginIn from './components/LoginIn'
+import TLS from './components/TLS.vue'
 
 const routes =[
   {
     path: '/spanish',
-   component: Table_spanish,
+   component: NotFound,
   },
   {
     path: '/issue',
@@ -43,6 +44,10 @@ const routes =[
   {
     path: '/admin',
    component: Login,
+  },
+  {
+    path: '/tls',
+   component: TLS,
   },
   {
     path: '/login',

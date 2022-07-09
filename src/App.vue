@@ -37,6 +37,13 @@
           text
         >Phishing</v-tab >
 
+        <v-tab                             
+          to="/tls"
+          width="100"
+          text
+        >TLS</v-tab >
+
+
       </div>
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>

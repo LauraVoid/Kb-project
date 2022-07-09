@@ -68,6 +68,9 @@
                   <div>Asegurarse de que no exista un parametro de onsubmit en el form y cada input debe tener el atributo name</div>
                   
                 </div>
+                <div>
+                  <b>regex email:</b> pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                </div>
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -320,6 +323,52 @@
           </v-expand-transition>
         </v-card>
       </v-col>
+      <v-col cols="12" sm="12" md="12" lg="6">
+        
+
+        <v-card elevation="2" class="mx-auto" max-width="800" outlined shaped>
+          <v-card-title> Ideas </v-card-title>
+
+          <v-card-subtitle> Inspiración </v-card-subtitle>
+
+          <v-card-actions>
+            
+
+            <v-spacer></v-spacer>
+
+            <v-btn block rounded tile icon @click="showIdeas = !showIdeas">
+              <v-icon>{{
+                showIdeas ? "mdi-chevron-up" : "mdi-chevron-down"
+              }}</v-icon>
+            </v-btn>
+          </v-card-actions>
+
+          <v-expand-transition>
+            <div v-show="showIdeas">
+              <v-divider></v-divider>
+
+              <v-card-text>
+                <div>
+                  <b>La clasica:</b>
+                  Sorte de algún articulo + agregar algun evento o día importante para aumentar la credibilidad
+                </div>
+                <div>
+                  <b>La re clasica: </b
+                  >Actualización de contraseña, cambio en la plataforma...
+                </div>
+                <div>
+                  <b>4 días: </b
+                  >Formulario para participar en la prueba piloto de trabajo por 4 días a la semana
+                </div>                
+                <div>
+                  <b>Actividad inusual: </b
+                  >Se detecto una actividad inusual con la cuenta del usuario, confirmar identidad
+                </div>
+              </v-card-text>
+            </div>
+          </v-expand-transition>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -333,6 +382,7 @@ export default {
       showTools: false,
       showCode: false,
       showAdj: false,
+      showIdeas:false,
     };
   },
 };
