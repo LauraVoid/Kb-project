@@ -2,15 +2,18 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import VueRouter from 'vue-router'
+import VueClipboard from 'vue-clipboard2'
 import Table_english from './components/Table_english'
 // import Table_spanish from './components/Table_spanish'
 import Issue from './components/Issue'
+import Info_Library from './components/Info_Library'
 import Phishing from './components/Phishing'
 import HelloWorld from './components/HelloWorld'
 import NotFound from './components/404'
 import Login from './components/Login'
 import LoginIn from './components/LoginIn'
 import TLS from './components/TLS.vue'
+import Library from './components/Library'
 
 const routes =[
   {
@@ -34,6 +37,22 @@ const routes =[
    component: Phishing,
   },
   {
+    path: '/tls',
+   component: TLS,
+  },
+  {
+    path: '/lib',
+   component: Library,
+  },
+  {
+    path: '/libs',
+    name:'lib_info',
+    component: Info_Library,
+    props: (route) => ({    
+     ...route.params
+ }),
+  },
+  {
     path: '/',
    component: HelloWorld,
   },
@@ -45,10 +64,7 @@ const routes =[
     path: '/admin',
    component: Login,
   },
-  {
-    path: '/tls',
-   component: TLS,
-  },
+  
   {
     path: '/login',
    component: LoginIn,
@@ -59,6 +75,7 @@ const routes =[
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
+Vue.use(VueClipboard)
 const router = new VueRouter({routes})
 new Vue({
   vuetify,

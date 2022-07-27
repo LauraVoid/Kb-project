@@ -42,6 +42,11 @@
           width="100"
           text
         >TLS</v-tab >
+        <v-tab                             
+          to="/lib"
+          width="100"
+          text
+        >Libraries</v-tab >
 
 
       </div>
