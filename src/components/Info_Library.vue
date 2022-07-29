@@ -36,7 +36,7 @@
             Información
           </th>
           <th class="text-left">
-            Fecha
+            Copiar
           </th>
         </tr>
       </thead>
@@ -45,13 +45,12 @@
           v-for="item in issue_data.cves"
           :key="item.name"
         >
-          <td>{{ item.name }}
+          <td :id="item.name">{{ item.name }}
             
           </td>
           <td>{{ item.version }}</td>
           <td>{{ item.info }}</td>
-          <td>
-             <input type="hidden" :id="item.name" :value="item.name" />
+          <td>            
             <v-btn
             @click="copy(item.name)"
             dark
@@ -106,19 +105,12 @@ export default {
   },
   methods: {
     copy(item) {
+      
         
-      let testingCodeToCopy = document.querySelector("#"+item);
-      testingCodeToCopy.setAttribute("type", "text");
-      testingCodeToCopy.select();
-
-      try {
-        this.dialog = document.execCommand('copy');
-      } catch (err) {
-        alert("Oops, unable to copy");
-      }
-      /* unselect the range */
-      testingCodeToCopy.setAttribute("type", "hidden");
-      window.getSelection().removeAllRanges();
+      let codeCopy = document.getElementById(item);
+      let content = codeCopy.textContent;
+      navigator.clipboard.writeText(content);
+      
     },
     goDates(date){
       window.open(date);

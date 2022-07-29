@@ -4,5 +4,12 @@ export default[
     "jQuery UI",
     "Bootstrap",
     "OpenSSH",
-    "Microsoft IIS",    
+    "Microsoft IIS",
+    "Microsoft SQL",
+    "SMB",
+    "JBOSS",
+    "Jetty",
+    "MySQL",
+
+
 ]

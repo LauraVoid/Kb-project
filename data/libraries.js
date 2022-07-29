@@ -76,5 +76,66 @@ export default [
         info_end: "https://docs.microsoft.com/en-us/lifecycle/products/internet-information-services-iis",
         support: "No soportado: <7.5",
     },
+    {
+        type: "Software",
+        name: "Microsoft SQL Server",
+        cves: [
+            { name: "CVE-2017-8516 (7.5)", version: "2012, 2014, 2016", info: "info disc" },
+            { name: "CVE-2015-1763 (8.5)", version: "SQL Server 2008 SP3 SP4 | 2008 R2 SP2 SP3 | 2012 SP1 SP2| 2014", info: "CVSS 2.0" },
+            { name: "CVE-2015-1762 (7.1)", version: "SQL Server 2008 SP3 SP4 | 2008 R2 SP2 SP3 | 2012 SP1 SP2| 2014", info: "CVSS 2.0" },
+            { name: "CVE-2015-1761 (6.5)", version: "SQL Server 2008 SP3 SP4 | 2008 R2 SP2 SP3 | 2012 SP1 SP2| 2014", info: "CVSS 2.0" },
+            { name: "CVE-2008-0085 (5.0)", version: "SQL Server 7.0 SP4 | 2000 SP4 | 2005 SP1 SP2 ", info: "CVSS 2.0" },
+            { name: "CVE-2008-0086 (9.0)", version: "SQL Server 2000 SP4", info: "CVSS 2.0 | buffer overflow" },
+            { name: "CVE-2008-0107 (9.0)", version: "SQL Server 7.0 SP4 | 2000 SP4 | 2005 SP1 SP2 ", info: "CVSS 2.0" },                  
+            
+        ],
+        info_end: "https://docs.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver16",
+        support: "No soportado: < SQL Server 2008",
+    },
+    {
+        type: "Software",
+        name: "SMB",
+        cves: [
+            { name: "CVE-2020-1301 (8.8)", version: "SMB v1", info: "code exec" },
+            { name: "CVE-2017-0269 (5.9)", version: "SMB v1", info: "DoS" }                  
+            
+        ],
+        info_end: "",
+        support: "No soportado: SMBv1",
+    },
+    {
+        type: "Software",
+        name: "JBOSS EAP",
+        cves: [
+            { name: "CVE-2020-12303 (4.6)", version: "JBOSS ", info: "CVSS 2.0" },
+            { name: "CVE-2012-0874 (6.8)", version: "JBOSS < 5.2.0 ", info: "CVSS 2.0 | code exec" },
+            { name: "CVE-2011-2941 (5.8)", version: "JBOSS < 5.2.0 ", info: "CVSS 2.0" },                  
+            
+        ],
+        info_end: "https://access.redhat.com/support/policy/updates/jboss_notes#p_eap",
+        support: "No soportado: < JBOSS 4",
+    },
+    {
+        type: "Software",
+        name: "Jetty",
+        cves: [
+            { name: "CVE-2019-10247 (5.3)", version: "Jetty 7.X | Jetty 8.X | Jetty < 9.2.27 | Jetty < 9.3.26 | Jetty < 9.4.16", info: "" },                       
+            
+        ],
+        info_end: "https://www.eclipse.org/jetty/download.php",
+        support: "No soportado: < Jetty 9.4",
+    },
+    {
+        type: "Software",
+        name: "MySQL",
+        cves: [
+            { name: "CVE-2020-2627 (6.5)", version: "MySQL < 8.0.18 ", info: "" }, 
+            { name: "CVE-2020-2576 (6.5)", version: "MySQL 8.5.4 ", info: "" }, 
+            { name: "CVE-2020-2686 (6.5)", version: "MySQL < 8.0.18 ", info: "" },                       
+            
+        ],
+        info_end: "https://docs.microsoft.com/en-us/azure/mysql/concepts-version-policy",
+        support: "No soportado: < MySQL 5.6",
+    },
 
 ]
