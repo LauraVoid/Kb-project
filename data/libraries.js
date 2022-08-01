@@ -4,7 +4,7 @@ export default [
         name: "jQuery",
         cves: [
             { name: "CVE-2020-11022 (6.1)", version: ">=1.5.1 <3.5.0", info: "" },
-            { name: "CVE-2020-11023 (6.1)", version: ">=1.5.1 |<3.5.0", info: "" },
+            { name: "CVE-2020-11023 (6.1)", version: ">=1.5.1 | <3.5.0", info: "" },
             { name: "CVE-2019-11358 (6.1)", version: "<3.4.0", info: "used in Drupal, Backdrop CMS, and other products" },
         ],
         info_end: "https://endoflife.date/jquery",
@@ -20,7 +20,7 @@ export default [
             { name: "CVE-2021-41182 (6.1)", version: "<1.13.0", info: "" },
         ],
         info_end: "",
-        support: "No soportado: <1.12.1"
+        support: "No soportado: =< 1.12.1"
     },
     {
         type: "Library",
@@ -33,7 +33,7 @@ export default [
             
         ],
         info_end: "https://endoflife.date/bootstrap",
-        support: "No soportado: <3.X"
+        support: "No soportado: =< 3.X"
     },
     {
         type: "Software",
@@ -47,7 +47,7 @@ export default [
         ],
         info_end: "https://endoflife.date/nginx",
         web_info: "http://nginx.org/en/security_advisories.html",
-        support: "No soportado: <1.21.X",
+        support: "No soportado: =< 1.21.X",
     },
     {
         type: "Software",
@@ -62,7 +62,7 @@ export default [
             
         ],
         info_end: "",
-        support: "Desactualizado: <8.8",
+        support: "Desactualizado: =< 8.8",
     },
     {
         type: "Software",
@@ -74,7 +74,7 @@ export default [
             
         ],
         info_end: "https://docs.microsoft.com/en-us/lifecycle/products/internet-information-services-iis",
-        support: "No soportado: <7.5",
+        support: "No soportado: =< 7.5",
     },
     {
         type: "Software",
@@ -90,7 +90,7 @@ export default [
             
         ],
         info_end: "https://docs.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver16",
-        support: "No soportado: < SQL Server 2008",
+        support: "No soportado: =< SQL Server 2008",
     },
     {
         type: "Software",
@@ -113,7 +113,7 @@ export default [
             
         ],
         info_end: "https://access.redhat.com/support/policy/updates/jboss_notes#p_eap",
-        support: "No soportado: < JBOSS 4",
+        support: "No soportado: =< JBOSS 4",
     },
     {
         type: "Software",
@@ -123,19 +123,30 @@ export default [
             
         ],
         info_end: "https://www.eclipse.org/jetty/download.php",
-        support: "No soportado: < Jetty 9.4",
+        support: "No soportado: =< Jetty 9.4",
     },
     {
         type: "Software",
         name: "MySQL",
         cves: [
-            { name: "CVE-2020-2627 (6.5)", version: "MySQL < 8.0.18 ", info: "" }, 
+            { name: "CVE-2020-2627 (6.5)", version: " < 8.0.18 ", info: "" }, 
             { name: "CVE-2020-2576 (6.5)", version: "MySQL 8.5.4 ", info: "" }, 
-            { name: "CVE-2020-2686 (6.5)", version: "MySQL < 8.0.18 ", info: "" },                       
+            { name: "CVE-2020-2686 (6.5)", version: " < 8.0.18 ", info: "" },                       
             
         ],
         info_end: "https://docs.microsoft.com/en-us/azure/mysql/concepts-version-policy",
-        support: "No soportado: < MySQL 5.6",
+        support: "No soportado: =< MySQL 5.6",
+    },
+    {
+        type: "Software",
+        name: "Angular",
+        cves: [
+            { name: "CVE-2022-25869 (6.1)", version: " * ", info: "XSS" }, 
+            { name: "CVE-2022-25844 (7.5)", version: " > 1.7.0 ", info: "DoS" },                
+            
+        ],
+        info_end: "https://endoflife.date/angular",
+        support: "No soportado: =< 11",
     },
 
 ]

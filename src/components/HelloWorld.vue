@@ -6,7 +6,7 @@
 
     <v-col  class="mx-auto" cols="12" sm="12" md="12" lg="12">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to kb-project
+          Welcome 
         </h1>
 
         <p class="subheading font-weight-regular">

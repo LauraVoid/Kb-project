@@ -19,11 +19,11 @@
         >
         <v-icon>mdi-home</v-icon></v-tab >
 
-        <v-tab                               
+        <!-- <v-tab                               
           to="/english"
           width="100"
           text
-        >Inglés</v-tab >
+        >Inglés</v-tab > -->
 
         <v-tab                             
           to="/spanish"

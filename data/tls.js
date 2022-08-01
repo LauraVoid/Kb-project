@@ -21,6 +21,6 @@ export default [
     },
     {
       name: 'PFS',
-      info: 'Inadecuada configuración (no preferido por el servidor). PFS no soportado ( solo se ven los cifrados , no ultima columna)',
+      info: 'Inadecuada configuración ( la curva no es preferida por el servidor). PFS no soportado ( solo se ven los cifrados , no ultima columna)',
     }
 ]

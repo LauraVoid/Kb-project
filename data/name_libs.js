@@ -10,6 +10,7 @@ export default[
     "JBOSS",
     "Jetty",
     "MySQL",
+    "Angular"
 
 
 ]
