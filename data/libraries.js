@@ -148,5 +148,18 @@ export default [
         info_end: "https://endoflife.date/angular",
         support: "No soportado: =< 11",
     },
+    {
+        type: "Library",
+        name: "Moment.js",
+        cves: [
+            { name: "CVE-2022-31129 (7.5)", version: " >= 2.18.0  | < 2.29.4 ", info: "Regex DoS" }, 
+            { name: "CVE-2022-24785 (7.5)", version: " < 2.29.2 ", info: "Directory traversal" },       
+            { name: "CVE-2017-18214 (7.5)", version: " < 2.19.3 ", info: "Regex DoS" },
+            { name: "CVE-2016-4055 (6.5)", version: " < 2.11.2 ", info: "Regex DoS" },              
+            
+        ],
+        info_end: "",
+        support: "No soportado: =< 2.29.3",
+    },
 
 ]
