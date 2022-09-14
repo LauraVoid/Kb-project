@@ -124,23 +124,123 @@
                 </div>
                 <v-img height="100" src="../assets/certbot.png"></v-img>
                 <br>
+                <div><b>Se deben reenombrar los certificados de la siguiente forma:</b></div>
+                <div>
+                  fullchain.pem = domain.crt
+                </div>
+                <div>
+                  privkey.pem = domain.key
+                </div>
+
                 <div>
                   En <b>config.json</b> se deben modificar los siguientes parametros:
                 </div>
                 <v-img height="100" src="../assets/config.png"></v-img>
+                <div><b>Una vez se actualice el archivo de config se debe reiniciar gophish para que se apliquen los cambios</b></div>
 
-                <div><b>Resultados certificados:</b></div>
-                <div>
-                  certificado.full = certificado.crt
-                </div>
-                <div>
-                  certificado.key = certificado.key
-                </div>
+                
               </v-card-text>
             </div>
           </v-expand-transition>
         </v-card>
       </v-col>
+      <v-col cols="12" sm="12" md="12" lg="6">
+        <v-card elevation="2" class="mx-auto" max-width="800" outlined shaped>
+          <v-card-title> Dominio </v-card-title>
+
+          <v-card-subtitle>Configuración del dominio</v-card-subtitle>
+
+          <v-card-actions>            
+
+            <v-spacer></v-spacer>
+
+            <v-btn block rounded tile   icon @click="showDomain = !showDomain">
+              <v-icon>{{
+                showDomain ? "mdi-chevron-up" : "mdi-chevron-down"
+              }}</v-icon>
+            </v-btn>
+          </v-card-actions>
+
+          <v-expand-transition>
+            <div v-show="showDomain">
+              <v-divider></v-divider>
+
+              <v-card-text>
+                <div>
+                  El dominio debe quedar con los siguientes archivos en el DNS para quedar configurado
+                </div>                
+               
+                <div>
+                  1. Un registro tipo TXT para la validación del dominio con mailjet
+                </div>
+                <br>
+                <div>
+                  2. Dos registros TXT que corresponden al la configuración SPF y DKIM de mailjet
+                </div>
+                <br>
+                <div>
+                  3. Un registro tipo A que contiene de nombre @ y el valor de la IP
+                </div>
+                <br>
+                <div>
+                  4. Un registro tipo A que contiene de nombre el subdominio de la campaña y el valor de la IP. Cada subdominio debe estar registrado como registro tipo A
+                </div>
+                <br>
+                <div>
+                  5. Un registro tipo CNAME para el nombre www y el valor del dominio
+                </div>
+                
+                
+              </v-card-text>
+            </div>
+          </v-expand-transition>
+        </v-card>
+      </v-col>
+
+ <v-col cols="12" sm="12" md="12" lg="6">
+        <v-card elevation="2" class="mx-auto" max-width="800" outlined shaped>
+          <v-card-title> Whitelist </v-card-title>
+
+          <v-card-subtitle> Reglas de correo para cliente </v-card-subtitle>
+
+          <v-card-actions>            
+
+            <v-spacer></v-spacer>
+
+            <v-btn block rounded tile   icon @click="showWhite = !showWhite">
+              <v-icon>{{
+                showWhite ? "mdi-chevron-up" : "mdi-chevron-down"
+              }}</v-icon>
+            </v-btn>
+          </v-card-actions>
+
+          <v-expand-transition>
+            <div v-show="showWhite">
+              <v-divider></v-divider>
+
+              <v-card-text>
+                <div>
+                  <p>Se debe hacer whitelist de los siguientes dominios</p
+                  >
+                </div>                
+               
+                <div>
+                  1. El dominio de la campaña de mailjet siempre es bn3.mailjet.com
+                </div>
+                <br>
+                
+                <div>2. El dominio de phishing con los respectivos subdominios, si se tiene una url de phishing login.midominio.com se debe realizar whitelist sobre
+                  login.midominio.com y del dominio www.midominio.com. En esta ultima es donde generalmente quedan guardados los archivos o el mensaje de confirmación                 
+                </div>
+                <br>
+                
+              </v-card-text>
+            </div>
+          </v-expand-transition>
+        </v-card>
+      </v-col>
+
+
 
       <v-col cols="12" sm="12" md="12" lg="6">
         
@@ -383,6 +483,8 @@ export default {
       showCode: false,
       showAdj: false,
       showIdeas:false,
+      showDomain:false,
+      showWhite:false,
     };
   },
 };
