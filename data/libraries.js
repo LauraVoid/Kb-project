@@ -39,7 +39,7 @@ export default [
         type: "Software",
         name: "Nginx",
         cves: [
-            { name: "CVE-2021-23017 (6.8)", version: "=>0.6.18 | =<1.20.0", info: "CVSS 2.0" },
+            { name: "CVE-2021-23017 (7.7)", version: "=>0.6.18 | =<1.20.0", info: "" },
             { name: "CVE-2019-9511 (7.5)", version: "=>1.9.5 | =<1.17.2", info: "" },
             { name: "CVE-2019-9513 (7.5)", version: "=>1.9.5 | =<1.17.2", info: "" },
             { name: "CVE-2019-8331 (6.1)", version: "=>1.1.3 | =<1.15.5 | =>1.0.7 | =<1.0.15", info: "" },
@@ -53,13 +53,16 @@ export default [
         type: "Software",
         name: "OpenSSH",
         cves: [
-            { name: "CVE-2016-10708 (7.5)", version: "<7.4", info: "DoS" },
-            { name: "CVE-2016-6515 (7.5)", version: "<7.3", info: "DoS" },
-            { name: "CVE-2015-8325 (7.8)", version: "<7.2p2", info: "Gain privileges" },
+            { name: "CVE-2021-41617 (5.9)", version: "6.2 | 8.x | <8.8", info: "" },
+            { name: "CVE-2020-14145 (5.9)", version: " => 5.7 | <8.4", info: "MiM" },
             { name: "CVE-2018-20685 (5.3)", version: "<7.9", info: "" },
             { name: "CVE-2019-6111 (5.9)", version: "<7.9", info: "" },
-            { name: "CVE-2021-41617 (5.9)", version: "6.2 | 8.x | <8.8", info: "" },
-            
+            { name: "CVE-2017-15906 (5.3)", version: "<7.6", info: "Zero-length files" },  
+            { name: "CVE-2016-10708 (7.5)", version: "<7.4", info: "DoS" },
+            { name: "CVE-2016-6515 (7.5)", version: "<7.3", info: "DoS" }, 
+            { name: "CVE-2015-8325 (7.8)", version: "<7.2", info: "Gain privileges" },         
+            { name: "CVE-2014-2532 (4.9)", version: "<6.6", info: "" },
+            { name: "CVE-2014-1692 (7.5)", version: "<6.4", info: "CVSS 2.0" },  
         ],
         info_end: "",
         support: "Desactualizado: =< 8.8",
@@ -131,7 +134,8 @@ export default [
         cves: [
             { name: "CVE-2020-2627 (6.5)", version: " < 8.0.18 ", info: "" }, 
             { name: "CVE-2020-2576 (6.5)", version: "MySQL 8.5.4 ", info: "" }, 
-            { name: "CVE-2020-2686 (6.5)", version: " < 8.0.18 ", info: "" },                       
+            { name: "CVE-2020-2686 (6.5)", version: " < 8.0.18 ", info: "" },
+            { name: "CVE-2017-10276 (6.5)", version: " <=5.6.37 | <5.7.19 ", info: "" },                       
             
         ],
         info_end: "https://docs.microsoft.com/en-us/azure/mysql/concepts-version-policy",
@@ -143,6 +147,17 @@ export default [
         cves: [
             { name: "CVE-2022-25869 (6.1)", version: " * ", info: "XSS" }, 
             { name: "CVE-2022-25844 (7.5)", version: " > 1.7.0 ", info: "DoS" },                
+            
+        ],
+        info_end: "https://endoflife.date/angular",
+        support: "No soportado: =< 11",
+    },
+    {
+        type: "Software",
+        name: "gSOAP",
+        cves: [
+            { name: "CVE-2019-7659 (8.1)", version: "=>2.7.* | <2.8.75 ", info: "DoS" }, 
+                
             
         ],
         info_end: "https://endoflife.date/angular",
@@ -161,5 +176,6 @@ export default [
         info_end: "",
         support: "No soportado: =< 2.29.3",
     },
+    
 
 ]
