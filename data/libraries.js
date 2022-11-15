@@ -42,7 +42,7 @@ export default [
             { name: "CVE-2021-23017 (7.7)", version: "=>0.6.18 | =<1.20.0", info: "" },
             { name: "CVE-2019-9511 (7.5)", version: "=>1.9.5 | =<1.17.2", info: "" },
             { name: "CVE-2019-9513 (7.5)", version: "=>1.9.5 | =<1.17.2", info: "" },
-            { name: "CVE-2019-8331 (6.1)", version: "=>1.1.3 | =<1.15.5 | =>1.0.7 | =<1.0.15", info: "" },
+            { name: "CVE-2019-9516 (6.5)", version: "=>1.9.5 | =<1.17.2", info: "" },
             
         ],
         info_end: "https://endoflife.date/nginx",

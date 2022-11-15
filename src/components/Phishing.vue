@@ -71,6 +71,14 @@
                 <div>
                   <b>regex email:</b> pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                 </div>
+                <br>
+                <div>
+                  <b>Configuración de un sender profile en gophish:</b>
+                  <p>Tener en cuenta que el sender dentro del email template debe ser modificado por el del perfil. El email de campaña se envia con el sender del email template, aunque dentro del perfil el dominio corresponda a otro dominio</p>
+                  <br>
+                   <v-img height="400" src="../assets/perfil.png"></v-img>
+
+                </div>
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -107,17 +115,22 @@
                   >
                 </div>
                 
-                <div><b>Generar certificado:</b></div>
+                <div><b>Generar certificado para el dominio:</b></div>
                 <div>
                   certbot certonly --standalone
                 </div>
                 <br>
+                <p>Cuando se crea el certificado para un unico dominio no es necesario agregar un registro TXT al DNS.</p>
+                
                 <div><b>Generar certificado para subdominio:</b></div>
                 <div>
                   certbot certonly --manual --preferred-challenges=dns --email (
                   EMAIL) --server https://acme-v02.api.letsencrypt.org/directory
                   --agree-tos -d *.(DOMAIN)
                 </div>
+                <br>
+                <div><p>Cuando se crear el certificado para subdominio, unicamente existe certificado para algo.midiminio.com por esto se debe tener precaución sobre
+                  donde se guardan las imagenes o css ya que sin un certificado valido en estos recursos no se van a cargar sobre el html.</p></div>
                 <br>
                 <div>
                   Certbot dara como respuesta la ruta de los certificados
@@ -189,8 +202,20 @@
                 <div>
                   5. Un registro tipo CNAME para el nombre www y el valor del dominio
                 </div>
-                
-                
+                <br>
+                <div>
+                  La configuración de los registros dentro del DNS debería verse así:
+                  <br>
+                   <v-img height="500" src="../assets/dominio.png"></v-img>
+                   <br>
+                   <p>Es importante destacar que no en todos los DNS funciona así:
+                    <br>
+                    1. El TXT de Validación de dominio puede que necesite el .dominio al final del nombre: mailjet._cf5d.midominio.com
+                    <br>
+                    2. Los TXT con nombre @, puede que necesiten ser reemplazados por el dominio. Lo mismo para el caso registros A de subdominios ej: login.midominio.com
+                   </p>
+                </div>
+
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -240,7 +265,60 @@
         </v-card>
       </v-col>
 
+<v-col cols="12" sm="12" md="12" lg="6">
+        
 
+        <v-card elevation="2" class="mx-auto" max-width="800" outlined shaped>
+          <v-card-title> Bloque de dominio </v-card-title>
+
+          <v-card-subtitle> Como evitarlo y que hacer luego de bloqueado </v-card-subtitle>
+
+          <v-card-actions>
+            
+
+            <v-spacer></v-spacer>
+
+            <v-btn block rounded tile icon @click="showBlock = !showBlock">
+              <v-icon>{{
+                showBlock ? "mdi-chevron-up" : "mdi-chevron-down"
+              }}</v-icon>
+            </v-btn>
+          </v-card-actions>
+
+          <v-expand-transition>
+            <div v-show="showBlock">
+              <v-divider></v-divider>
+
+              <v-card-text>
+                <div>
+                  <strong>Evitar:</strong>
+                  <br>
+                  <p>Para evitar que el dominio sea bloqueado primero hay que asegurarse que no exista ninguna referencia de microsoft dentro del landing, 
+                    tambien se deben verificar los css. Modificar los nombres de archivos, imagenes o otros por uno más generico que no tenga relación con microsoft.</p>
+                  <p>No incluir la palabra microsoft en el dominio, esto hace que más rapido se bloquee el dominio</p>
+                  <p>En ocasiones el bloqueo del dominio se da por parte de la empresa, ya que los controles de office365 o Exchange pueden generar el reporte de phishing. Cuando este control esta activo una
+                    una ip de microsoft (40.94....) analiza el correo y abre el link, si esto sucede el dominio se bloquea en 1 día.
+                  </p>
+                  <p>Para tener en cuenta: Una vez se envia un correo, el tiempo maximo sin bloque son aproximadamente 3 días, para asegurar que el correo llega sin exponerse al bloqueado
+                    se puede enviar un test con un link no relacionado a la campaña. 
+                  </p>
+                </div>
+                <div>
+                  <strong>Dominio bloqueado:</strong>
+                  <br>
+                  <p>Una vez el dominio esta bloqueado, por si solo se vuelve a desbloquear pero tarda más de 6 meses. La mejor opción es intentar conseguir otro dominio, si no es posible:</p>
+                  <p>La primera solución es intentar reemplazando el sudominio, si anteriormente era login.midominio.com se puede reemplazar por midominio.com/login por ejemplo</p>
+                  <p>Otra opción es entrar a <a href="https://search.google.com/search-console" target="_blank"> Search Console </a> de google y revisar la razon por la que al dominio se le dio de baja, realizar los cambios correspondientes y enviar
+                    una solicitud, que puede tardar aproximadamente 24h. No se debe enviar más de una solicitud o el proceso tardará más tiempo
+                  </p>
+                  <p><strong>Importante:</strong> Si el dominio fue bloqueado una vez y se logra desbloquear, es muy probable que vuelva a bloquearse en menos de 4h porque ya el dominio pertenece a la lista negra y queda marcado</p>
+
+                </div>
+              </v-card-text>
+            </div>
+          </v-expand-transition>
+        </v-card>
+      </v-col>
 
       <v-col cols="12" sm="12" md="12" lg="6">
         
@@ -485,6 +563,7 @@ export default {
       showIdeas:false,
       showDomain:false,
       showWhite:false,
+      showBlock:false,
     };
   },
 };
