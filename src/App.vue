@@ -36,6 +36,11 @@
           width="100"
           text
         >Phishing</v-tab >
+        <v-tab                             
+          to="/phishing-steps"
+          width="100"
+          text
+        >Phishing Steps</v-tab >
 
         <v-tab                             
           to="/tls"

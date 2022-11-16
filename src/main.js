@@ -8,6 +8,7 @@ import Table_english from './components/Table_english'
 import Issue from './components/Issue'
 import Info_Library from './components/Info_Library'
 import Phishing from './components/Phishing'
+import PhishingSteps from './components/Phishing_steps'
 import HelloWorld from './components/HelloWorld'
 import NotFound from './components/404'
 import Login from './components/Login'
@@ -35,6 +36,10 @@ const routes =[
   {
     path: '/phishing',
    component: Phishing,
+  },
+  {
+    path: '/phishing-steps',
+   component: PhishingSteps,
   },
   {
     path: '/tls',

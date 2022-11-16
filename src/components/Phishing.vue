@@ -206,14 +206,15 @@
                 <div>
                   La configuración de los registros dentro del DNS debería verse así:
                   <br>
-                   <v-img height="500" src="../assets/dominio.png"></v-img>
+                   
                    <br>
-                   <p>Es importante destacar que no en todos los DNS funciona así:
+                   <p>Es importante tener en cuenta que no en todos los DNS funciona así
                     <br>
                     1. El TXT de Validación de dominio puede que necesite el .dominio al final del nombre: mailjet._cf5d.midominio.com
                     <br>
                     2. Los TXT con nombre @, puede que necesiten ser reemplazados por el dominio. Lo mismo para el caso registros A de subdominios ej: login.midominio.com
                    </p>
+                   <p>Para el caso de godaddy no se necesita el nombre de dominio, en namecheap si es necesario</p>
                 </div>
 
               </v-card-text>
@@ -269,7 +270,7 @@
         
 
         <v-card elevation="2" class="mx-auto" max-width="800" outlined shaped>
-          <v-card-title> Bloque de dominio </v-card-title>
+          <v-card-title> Bloqueo de Dominio </v-card-title>
 
           <v-card-subtitle> Como evitarlo y que hacer luego de bloqueado </v-card-subtitle>
 
@@ -291,27 +292,32 @@
 
               <v-card-text>
                 <div>
-                  <strong>Evitar:</strong>
+                  <strong>Recomendaciones para evitar el bloqueo:</strong>
                   <br>
-                  <p>Para evitar que el dominio sea bloqueado primero hay que asegurarse que no exista ninguna referencia de microsoft dentro del landing, 
-                    tambien se deben verificar los css. Modificar los nombres de archivos, imagenes o otros por uno más generico que no tenga relación con microsoft.</p>
-                  <p>No incluir la palabra microsoft en el dominio, esto hace que más rapido se bloquee el dominio</p>
-                  <p>En ocasiones el bloqueo del dominio se da por parte de la empresa, ya que los controles de office365 o Exchange pueden generar el reporte de phishing. Cuando este control esta activo una
-                    una ip de microsoft (40.94....) analiza el correo y abre el link, si esto sucede el dominio se bloquea en 1 día.
-                  </p>
-                  <p>Para tener en cuenta: Una vez se envia un correo, el tiempo maximo sin bloque son aproximadamente 3 días, para asegurar que el correo llega sin exponerse al bloqueado
+                  <ul>
+                  <li>Para evitar que el dominio sea bloqueado primero hay que asegurarse que no exista ninguna referencia de microsoft dentro del landing, 
+                    tambien se deben verificar los css. Modificar los nombres de archivos, imagenes o otros por uno más generico que no tenga relación con microsoft.</li>
+                  <li>No incluir la palabra microsoft en el dominio, esto hace que más rapido se bloquee el dominio</li>
+                  <li>En ocasiones el bloqueo del dominio se da por parte del cliente, ya que los controles de office365 o Exchange pueden generar el reporte de phishing, sobretodo si el correo se va a cuarentena. Cuando este control esta activo una
+                    una ip de microsoft (40.94....) analiza el correo y abre el link, si esto sucede el dominio se bloquea en pocas horas.
+                  </li>
+                  <li>
+                    Existe otra opción para asegurar el <a href="https://chromium.googlesource.com/chromium/src/+/master/docs/security/lookalikes/lookalike-domains.md"  target="_blank">dominio</a>, para esto el cliente debe cargar unos archivos txt al dominio original y a su vez estos mismos archivos deben estar en el dominio phishing, la desvenataja es que esta validación tardaría unos días adicionales mientras Google aprueba
+                    </li>
+                  </ul>
+                  <p>Para tener en cuenta: Una vez se envia un correo por primera vez, el tiempo maximo sin bloqueo son aproximadamente 3 días, para asegurar que el correo llega sin exponerse al bloqueado
                     se puede enviar un test con un link no relacionado a la campaña. 
                   </p>
+                  
                 </div>
                 <div>
                   <strong>Dominio bloqueado:</strong>
                   <br>
                   <p>Una vez el dominio esta bloqueado, por si solo se vuelve a desbloquear pero tarda más de 6 meses. La mejor opción es intentar conseguir otro dominio, si no es posible:</p>
-                  <p>La primera solución es intentar reemplazando el sudominio, si anteriormente era login.midominio.com se puede reemplazar por midominio.com/login por ejemplo</p>
-                  <p>Otra opción es entrar a <a href="https://search.google.com/search-console" target="_blank"> Search Console </a> de google y revisar la razon por la que al dominio se le dio de baja, realizar los cambios correspondientes y enviar
-                    una solicitud, que puede tardar aproximadamente 24h. No se debe enviar más de una solicitud o el proceso tardará más tiempo
+                  <p>La unica solución es entrar a <a href="https://search.google.com/search-console" target="_blank"> Search Console </a> de google y revisar la razón por la que al dominio se le dio de baja, realizar los cambios correspondientes (para estos casos con modificar la landing page ya se recupera el dominio) y enviar
+                    una solicitud, que puede tardar maximo hasta una semana en revisar y volver a tener el dominio activo. No se debe enviar más de una solicitud o el proceso tardará más tiempo
                   </p>
-                  <p><strong>Importante:</strong> Si el dominio fue bloqueado una vez y se logra desbloquear, es muy probable que vuelva a bloquearse en menos de 4h porque ya el dominio pertenece a la lista negra y queda marcado</p>
+                  <p><strong>Importante:</strong> Si el dominio fue bloqueado una vez y se logra desbloquear, es muy probable que vuelva a bloquearse en menos de 4h porque ya el dominio pertenece a la lista negra y queda marcado. Lo mejor es asegurarse que el whitelist del cliente este realizado correctamente</p>
 
                 </div>
               </v-card-text>
@@ -501,52 +507,7 @@
           </v-expand-transition>
         </v-card>
       </v-col>
-      <v-col cols="12" sm="12" md="12" lg="6">
-        
-
-        <v-card elevation="2" class="mx-auto" max-width="800" outlined shaped>
-          <v-card-title> Ideas </v-card-title>
-
-          <v-card-subtitle> Inspiración </v-card-subtitle>
-
-          <v-card-actions>
-            
-
-            <v-spacer></v-spacer>
-
-            <v-btn block rounded tile icon @click="showIdeas = !showIdeas">
-              <v-icon>{{
-                showIdeas ? "mdi-chevron-up" : "mdi-chevron-down"
-              }}</v-icon>
-            </v-btn>
-          </v-card-actions>
-
-          <v-expand-transition>
-            <div v-show="showIdeas">
-              <v-divider></v-divider>
-
-              <v-card-text>
-                <div>
-                  <b>La clasica:</b>
-                  Sorte de algún articulo + agregar algun evento o día importante para aumentar la credibilidad
-                </div>
-                <div>
-                  <b>La re clasica: </b
-                  >Actualización de contraseña, cambio en la plataforma...
-                </div>
-                <div>
-                  <b>4 días: </b
-                  >Formulario para participar en la prueba piloto de trabajo por 4 días a la semana
-                </div>                
-                <div>
-                  <b>Actividad inusual: </b
-                  >Se detecto una actividad inusual con la cuenta del usuario, confirmar identidad
-                </div>
-              </v-card-text>
-            </div>
-          </v-expand-transition>
-        </v-card>
-      </v-col>
+     
     </v-row>
   </v-container>
 </template>
@@ -560,7 +521,6 @@ export default {
       showTools: false,
       showCode: false,
       showAdj: false,
-      showIdeas:false,
       showDomain:false,
       showWhite:false,
       showBlock:false,
