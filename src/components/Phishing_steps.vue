@@ -219,13 +219,42 @@
               <v-card flat>
                 <v-card-title> Configuración de Gophish </v-card-title>
                 <v-card-text>
-                  <p>
-                    Cras sagittis. Phasellus nec sem in justo pellentesque
-                    facilisis. Proin sapien ipsum, porta a, auctor quis, euismod
-                    ut, mi. Donec quam felis, ultricies nec, pellentesque eu,
-                    pretium quis, sem. Nam at tortor in tellus interdum
-                    sagittis.
-                  </p>
+                  <ol>
+                    <li><b>Sending Profile:</b>
+                    <br> 
+                    Para crear el sender se agrega la info del perfil. 
+                    <br>
+                    <u>SMTP From:</u> se ingresa asi: Nombre Sender <span>&lt;</span>nombre@midominio.com<span>&gt;</span>
+                    <br>
+                     <u>Host:</u> es el de mailjet siempre con el puerto 587
+                    <v-img max-height="500"
+                      max-width="500" src="../assets/pro.png"></v-img>
+                      Para las credenciales del usuario se debe conseguir en el perfil de mailjet en: Configurar mi SMTP > Recuperar credenciales de API.
+                      <br>
+                      La clave de api corresponde al username. La clave secreta se debe regenerar en caso de que no se tenga guardada.
+                      <v-img max-height="200"
+                      max-width="500" src="../assets/mailjet.png"></v-img>
+                      Para verificar que este correctamente configurado se envia el email de test.
+                      <br>
+                      <u>Importante:</u> las pruebas se deben realizar con un correo externo, ya que por politicas internas no es posible ver correos de otros dominios no autorizados.
+                      Se puede hacer la prueba con un gmail pero se debe tener en cuenta que si el correo tiene una imagen esta no se renderiza correctamente, solo en outlook se veo bien.
+                    </li>
+                    <li><b>Landing Page:</b>
+                    <br>
+                    Se agrega el nombre, la pagina construida en html, se marca la casilla de Capture submitted Data y Capture passwords dependiendo de la decisión del cliente.
+                    Para el redirect se puede utilizar el mensaje de participacion o se envia al login original del cliente. Para más info dirigirse a la sección <a href="#/phishing">GoPhish</a>
+                    </li>
+                    <li><b>Email template:</b>
+                    <br>
+                    El Envelope sender es el usuario que se ve como remitente al momento de enviar el correo, normalmente se usa el mismo que el configurado en el sender profile. Se agrega el Subject y para el cuerpo se agrega desde la pestaña de HTML
+                    ya sea solo texto o imagen se hace en html para mayor facilidad, para agregar una imagen como parte del cuerpo utilizar el codigo de la sección <a href="#/phishing">Imagen en Cuerpo</a>
+                    y se marca la casilla de Add Tracking Image.
+                    </li>
+                    <li><b>Users and Groups:</b>
+                    <br>
+                    Desde esta pestaña es posible agregar los usuarios a los que se enviara el correo, se crea el grupo de test al cual se agregan las cuentas que el cliente quiere para validar la campaña. Se crea tambien el grupo de empleados para estos es mas comodo importarlos, se descarga el template CSV y se agregan las cuentas, para utilizar el mailjet gratuito se crean grupos de maximo 190 dado que cada cuenta gratis puede enviar maximo 200 por hora o dependiendo de si la cuenta tiene alguna restricción puede ser menor la cantidad disponible de correos
+                    </li>
+                  </ol>
                 </v-card-text>
               </v-card>
             </v-tab-item>
@@ -235,11 +264,7 @@
                 <v-card-title> Instalación de Certificado</v-card-title>
                 <v-card-text>
                   <p>
-                    Cras sagittis. Phasellus nec sem in justo pellentesque
-                    facilisis. Proin sapien ipsum, porta a, auctor quis, euismod
-                    ut, mi. Donec quam felis, ultricies nec, pellentesque eu,
-                    pretium quis, sem. Nam at tortor in tellus interdum
-                    sagittis.
+                    Dirigirse a la sección de <a href="#/phishing">Certbot</a>
                   </p>
                 </v-card-text>
               </v-card>
@@ -250,11 +275,7 @@
                 <v-card-title> Creación de Campaña</v-card-title>
                 <v-card-text>
                   <p>
-                    Cras sagittis. Phasellus nec sem in justo pellentesque
-                    facilisis. Proin sapien ipsum, porta a, auctor quis, euismod
-                    ut, mi. Donec quam felis, ultricies nec, pellentesque eu,
-                    pretium quis, sem. Nam at tortor in tellus interdum
-                    sagittis.
+                    Para crear la campaña se selecciona el email y el landing creado, se utiliza la URL definida en el paso 1, se escoje un perfil y el grupo a quien se detina la campaña.
                   </p>
                 </v-card-text>
               </v-card>
@@ -265,11 +286,8 @@
                 <v-card-title> Pruebas de Cliente</v-card-title>
                 <v-card-text>
                   <p>
-                    Cras sagittis. Phasellus nec sem in justo pellentesque
-                    facilisis. Proin sapien ipsum, porta a, auctor quis, euismod
-                    ut, mi. Donec quam felis, ultricies nec, pellentesque eu,
-                    pretium quis, sem. Nam at tortor in tellus interdum
-                    sagittis.
+                    Una vez se tiene todo configurado se envia la prueba al cliente para validar que este llegando correctamente, es importante tener en cuenta el tema del bloqueo de dominio, si una ip de Microsoft accede, tardaría poco en bloquearse esto para el caso de que el login sea una copia de microsoft
+                    Una vez esta todo ok, se envia la campaña y se esperan los resultados.
                   </p>
                 </v-card-text>
               </v-card>
@@ -280,11 +298,7 @@
                 <v-card-title> Finalización de Campaña</v-card-title>
                 <v-card-text>
                   <p>
-                    Cras sagittis. Phasellus nec sem in justo pellentesque
-                    facilisis. Proin sapien ipsum, porta a, auctor quis, euismod
-                    ut, mi. Donec quam felis, ultricies nec, pellentesque eu,
-                    pretium quis, sem. Nam at tortor in tellus interdum
-                    sagittis.
+                    Cuando ya se termina la campaña se exportan los resultados, tanto el Results como el Raw Events. Para realizar el repo se utiliza la información de Raw Events, es importante organizar los datos como eliminar duplicados y asegurar que los valores tengan sentido, en algunos casos se reportan Clicked pero no open, por lo que se debe agregar los open para que tenga la información mas certera posible.
                   </p>
                 </v-card-text>
               </v-card>
