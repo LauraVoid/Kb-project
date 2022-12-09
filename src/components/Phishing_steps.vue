@@ -87,6 +87,68 @@
                     campaña para obtener la configuración o cambios
                     correspondientes.
                   </p>
+                  <b>Plantilla para enviar propuesta:</b>
+                  <v-alert
+  border="left"
+  color="teal darken-1"
+  dense
+  outlined
+  type="info"
+>ADECUAR A LA NECESIDAD DE LA CAMPAÑA
+
+
+<p>
+  <br>
+Estimado, de acuerdo a lo conversado en la meeting de hace unos momentos envio la información sobre los avances para la realización de la campaña de Phishing.
+
+Se pensó en la realización de (IDEA DEL PHISHING) que cuente con una fecha lí­mite para participar. Tomamos como ejemplo los emails provistos para idear lo siguiente:
+El email consistirá¡ de una imagen como cuerpo del mismo. El asunto será: <span>"(ASUNTO)"</span>
+</p>
+Imagen en el email:
+<br>
+ <span>(INSERTAR IMAGEN DEL CUERPO DEL MAIL)</span>
+<br>
+Sitio a clonar:
+<br>
+ <span> (INSERTAR IMAGEN DEL LOGIN CLONADO)</span>
+
+<p>
+El dominio a comprar podría ser:
+</p>
+<ul>
+  <li><span>(OPCIÓN DOMINIO 1)</span></li>
+    <li><span>(OPCIÓN DOMINIO 2)</span></li>
+
+</ul>
+<p>
+Con dicho dominio, se utilizará¡ como sender de la campaña, a la dirección de correo:
+</p>
+<ul>
+  <li><span>(NOMBRE SENDER) (SENDER@MIDOMINIO.COM)</span></li>
+    <li><span>(NOMBRE SENDER) (SENDER@MIDOMINIO.COM)</span></li>
+
+</ul>
+<p>
+Siendo una posible URL a utilizar en el email, la siguiente:
+</p>
+<ul>
+  <li><span>(URL DEL LOGIN)</span></li>
+</ul>
+
+<p>
+  <br>
+La siguiente imagen muestra la redireccion final luego de ingresar las credenciales:
+
+<span> (IMAGEN DE MENSAJE FINAL) </span>
+</p>
+<p>
+Si están de acuerdo con la propuesta, procederemos a la compra del dominio indicado y a la configuración del servidor para así poder realizar una prueba hacia algún mail de <span>(CLIENTE)</span> para corroborar que llega de manera exitosa y puedan ingresar al sitio clonado sin inconvenientes.
+<br>
+Cualquier duda o consulta quedo a su disposición!
+<br>
+Saludos,
+</p>
+</v-alert>
                 </v-card-text>
               </v-card>
             </v-tab-item>
