@@ -265,6 +265,7 @@ Saludos,
                   <b>Importante:</b><p>Los cambios en registros A pueden tardar aproximadamente 10 minutos, los TXT 5 minutos. Si despues de este tiempo los registros no se evidencian, estan mal configurados,
                     esto puede ser porque algunos administrador de DNS en lugar de @ utilizan el dominio. Esto significa que los registros deben tener la siguiente forma: nombre.midominio.com
                   </p>
+                  <p>Para verificar que registros tiene el dominio se pueden ver <a href="https://toolbox.googleapps.com/apps/dig/#TXT/">aquí</a></p>
                   <p>Por ejemplo:
                     <br>
                     mailjet._domainkey.<b>midominio.com</b>
