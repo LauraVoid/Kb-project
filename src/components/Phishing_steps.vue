@@ -272,6 +272,17 @@ Saludos,
                   <p>La siguiente imagen es un ejemplo de como se ven los registros:</p>
                   <v-img max-height="600"
                       max-width="600" src="../assets/dominio.png"></v-img>
+                  <br>
+                  <p>Para validar que los registros han quedado bien configurados dentro de la cuenta de mailjet en "Manage sender addresses" es posible visualizar los dominios agregados junto a su estado
+                se da click en Validate <p>
+                
+                <v-img max-height="600"
+                      max-width="600" src="../assets/validate.png"></v-img>
+                  <br>
+                  <p>Para validar el registro de autenticación se da click en Check now. Luego se muestra la pantalla para verificar el DKIM y SPF haciendo click en Refresh se actualizaran. Cuando todas las validaciones esten correctas
+                    desde Gophish en Sending Profile se crea el sender profile para verificarm la configuración.
+                  </p>
+
                   
                 </v-card-text>
               </v-card>
@@ -304,13 +315,19 @@ Saludos,
                     <li><b>Landing Page:</b>
                     <br>
                     Se agrega el nombre, la pagina construida en html, se marca la casilla de Capture submitted Data y Capture passwords dependiendo de la decisión del cliente.
-                    Para el redirect se puede utilizar el mensaje de participacion o se envia al login original del cliente. Para más info dirigirse a la sección <a href="#/phishing">GoPhish</a>
+                    Para el redirect se puede utilizar el mensaje de participacion o se envia al login original del cliente. Para más info sobre como debe estar el formulario de login y capturar las credenciales dirigirse a la sección <a href="#/phishing">GoPhish</a> 
+                    <br>
+                    Todos los archivos como css, imagenes deben estar guardados dentro del server en la ruta gophish > static > endpoint
+                    <v-img max-height="600"
+                      max-width="500" src="../assets/landing.png"></v-img>
+                    <br>
+                    En el recuadro rojo se ve la ruta de como se deben traer los archivos guardados en el server.
                     </li>
                     <li><b>Email template:</b>
                     <br>
                     El Envelope sender es el usuario que se ve como remitente al momento de enviar el correo, normalmente se usa el mismo que el configurado en el sender profile. Se agrega el Subject y para el cuerpo se agrega desde la pestaña de HTML
-                    ya sea solo texto o imagen se hace en html para mayor facilidad, para agregar una imagen como parte del cuerpo utilizar el codigo de la sección <a href="#/phishing">Imagen en Cuerpo</a>
-                    y se marca la casilla de Add Tracking Image.
+                    ya sea solo texto o imagen se hace en html para mayor facilidad y se marca la casilla de Add Tracking Image. Al momento de agregar el html es importante eliminar el traking que realiza mailjet sobre las imagenes, para esto se agrega la propiedad rel="notrack" sobre las etiquetas de img
+                    esto se puede ver en el codigo de la sección <a href="#/phishing">Imagen en Cuerpo</a> Este codigo se usa en caso de que el unico contenido del mensaje sea una imagen, para el caso de un mensaje con texto, se puede guardar el html de un ejemplo enviado por el cliente para modificarlo o hacer de cero, pero siempre eliminando el track de mailjet
                     </li>
                     <li><b>Users and Groups:</b>
                     <br>
