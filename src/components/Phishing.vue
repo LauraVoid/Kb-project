@@ -409,7 +409,7 @@
                       >&lt;a href=&quot;{ {.URL}}&quot; rel="notrack"&gt;</span
                     >
                   </div>
-                  <div><span>&lt;img src="[BASE64]" /&gt;</span></div>
+                  <div><span>&lt;img width="600" src="[BASE64]" /&gt;</span></div>
                   <div><span>&lt;/a&gt;</span></div>
                   <div><span>&lt;br&gt;</span></div>
                   <div><span>&lt;br&gt;</span></div>
